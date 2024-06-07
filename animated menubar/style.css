@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: montserrat;
+    background: #f4c405;
+}
+.wrapper, label{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#box:checked ~ label{
+    left: 90%;
+    transform: translateY(-50%);
+}
+.wrapper label{
+    z-index: 1;
+    transition: .4s ease-in;
+}
+.wrapper label #button{
+    background: #262626;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    width: 75px;
+    height: 70px;
+}
+label #button i{
+    color: #f9f9f9;
+    transition: transform .2s linear;
+    margin: auto;
+    font-size: 30px;
+}
+#box:checked ~ label #button i::before{
+    content: '\f00d';
+}
+.wrapper .navs{
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transition .4s ease-in;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    background: #f9f9f9;
+    padding: 0 60px 0 0;
+    border-radius: 50px;
+}
+#box:checked ~ .navs{
+    transform: scaleX(1);
+}
+.navs ul{
+    list-style: none;
+    display: flex;
+    padding: 20px 5px;
+}
+.navs ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color: #262626;
+    font-size: 15px;
+    margin: 0 10px;
+    padding: 10px 20px;
+}
+#box{
+    display: none;
+}
+.navs ul li a:hover{
+    background: #262626;
+    border-radius: 50px;
+    color: #fff;
+}
